@@ -1,0 +1,38 @@
+[package]
+name = "mega-rust"
+version = "0.1.0"
+edition = "2021"
+publish = false
+default-run = "mega-rust"
+
+[[bin]]
+name = "mega-rust"
+test = false
+bench = false
+
+[[bin]]
+name = "uart-bridge"
+path = "src/bin/uart-bridge.rs"
+test = false
+bench = false
+
+[dependencies]
+panic-halt = "1.0.0"
+nb = "1.1.0"
+
+[dependencies.arduino-hal]
+git = "https://github.com/Rahix/avr-hal"
+rev = "e5c8f37fe48419956e722490a82b9ca9b9fc61a2"
+features = ["arduino-mega2560"]
+
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"

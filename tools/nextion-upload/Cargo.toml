@@ -1,0 +1,15 @@
+[package]
+name = "nextion-upload"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = []
+hardware-upload = ["dep:serialport"]
+
+[dependencies]
+serialport = { version = "=4.8.1", default-features = false, optional = true }
+windows-sys = { version = "=0.52.0", features = ["Win32_Foundation", "Win32_Security_Cryptography"] }
+
+[workspace]

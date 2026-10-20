@@ -1,0 +1,23 @@
+# Firmware and tool build output
+**/target/
+**/build/
+*.elf
+*.hex
+*.o
+*.a
+*.map
+
+# Compiled Nextion output
+*.tft
+
+# Local test captures
+docs/test-results/
+
+# Machine-local files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

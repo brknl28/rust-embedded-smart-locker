@@ -1,0 +1,8 @@
+[build]
+target = "avr-none"
+rustflags = ["-C", "target-cpu=atmega2560"]
+
+[unstable]
+build-std = ["core"]
+
+# Upload is an explicit, separately approved avrdude command; no flash runner.
